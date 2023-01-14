@@ -935,5 +935,849 @@ MLE_LAB_3|schema||artem||UPDATE|G</Grants>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <user id="291" parent="1" name="artem"/>
+    <table id="292" parent="288" name="data">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <table id="293" parent="288" name="data_classified">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <table id="294" parent="288" name="data_test_set">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <table id="295" parent="288" name="data_test_set_classified_by_NB">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <table id="296" parent="288" name="data_train_set">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <column id="297" parent="292" name="index">
+      <DasType>bigint|0s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="298" parent="292" name="energy_100g">
+      <DasType>double|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="299" parent="292" name="fat_100g">
+      <DasType>double|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <column id="300" parent="292" name="saturated_fat_100g">
+      <DasType>double|0s</DasType>
+      <Position>4</Position>
+    </column>
+    <column id="301" parent="292" name="monounsaturated_fat_100g">
+      <DasType>double|0s</DasType>
+      <Position>5</Position>
+    </column>
+    <column id="302" parent="292" name="polyunsaturated_fat_100g">
+      <DasType>double|0s</DasType>
+      <Position>6</Position>
+    </column>
+    <column id="303" parent="292" name="trans_fat_100g">
+      <DasType>double|0s</DasType>
+      <Position>7</Position>
+    </column>
+    <column id="304" parent="292" name="cholesterol_100g">
+      <DasType>double|0s</DasType>
+      <Position>8</Position>
+    </column>
+    <column id="305" parent="292" name="carbohydrates_100g">
+      <DasType>double|0s</DasType>
+      <Position>9</Position>
+    </column>
+    <column id="306" parent="292" name="sugars_100g">
+      <DasType>double|0s</DasType>
+      <Position>10</Position>
+    </column>
+    <column id="307" parent="292" name="fiber_100g">
+      <DasType>double|0s</DasType>
+      <Position>11</Position>
+    </column>
+    <column id="308" parent="292" name="proteins_100g">
+      <DasType>double|0s</DasType>
+      <Position>12</Position>
+    </column>
+    <column id="309" parent="292" name="salt_100g">
+      <DasType>double|0s</DasType>
+      <Position>13</Position>
+    </column>
+    <column id="310" parent="292" name="sodium_100g">
+      <DasType>double|0s</DasType>
+      <Position>14</Position>
+    </column>
+    <column id="311" parent="292" name="alcohol_100g">
+      <DasType>double|0s</DasType>
+      <Position>15</Position>
+    </column>
+    <column id="312" parent="292" name="vitamin_a_100g">
+      <DasType>double|0s</DasType>
+      <Position>16</Position>
+    </column>
+    <column id="313" parent="292" name="vitamin_d_100g">
+      <DasType>double|0s</DasType>
+      <Position>17</Position>
+    </column>
+    <column id="314" parent="292" name="vitamin_e_100g">
+      <DasType>double|0s</DasType>
+      <Position>18</Position>
+    </column>
+    <column id="315" parent="292" name="vitamin_c_100g">
+      <DasType>double|0s</DasType>
+      <Position>19</Position>
+    </column>
+    <column id="316" parent="292" name="vitamin_b1_100g">
+      <DasType>double|0s</DasType>
+      <Position>20</Position>
+    </column>
+    <column id="317" parent="292" name="vitamin_b2_100g">
+      <DasType>double|0s</DasType>
+      <Position>21</Position>
+    </column>
+    <column id="318" parent="292" name="vitamin_pp_100g">
+      <DasType>double|0s</DasType>
+      <Position>22</Position>
+    </column>
+    <column id="319" parent="292" name="vitamin_b6_100g">
+      <DasType>double|0s</DasType>
+      <Position>23</Position>
+    </column>
+    <column id="320" parent="292" name="vitamin_b9_100g">
+      <DasType>double|0s</DasType>
+      <Position>24</Position>
+    </column>
+    <column id="321" parent="292" name="folates_100g">
+      <DasType>double|0s</DasType>
+      <Position>25</Position>
+    </column>
+    <column id="322" parent="292" name="vitamin_b12_100g">
+      <DasType>double|0s</DasType>
+      <Position>26</Position>
+    </column>
+    <column id="323" parent="292" name="pantothenic_acid_100g">
+      <DasType>double|0s</DasType>
+      <Position>27</Position>
+    </column>
+    <column id="324" parent="292" name="potassium_100g">
+      <DasType>double|0s</DasType>
+      <Position>28</Position>
+    </column>
+    <column id="325" parent="292" name="calcium_100g">
+      <DasType>double|0s</DasType>
+      <Position>29</Position>
+    </column>
+    <column id="326" parent="292" name="phosphorus_100g">
+      <DasType>double|0s</DasType>
+      <Position>30</Position>
+    </column>
+    <column id="327" parent="292" name="iron_100g">
+      <DasType>double|0s</DasType>
+      <Position>31</Position>
+    </column>
+    <column id="328" parent="292" name="magnesium_100g">
+      <DasType>double|0s</DasType>
+      <Position>32</Position>
+    </column>
+    <column id="329" parent="292" name="zinc_100g">
+      <DasType>double|0s</DasType>
+      <Position>33</Position>
+    </column>
+    <column id="330" parent="292" name="copper_100g">
+      <DasType>double|0s</DasType>
+      <Position>34</Position>
+    </column>
+    <column id="331" parent="292" name="manganese_100g">
+      <DasType>double|0s</DasType>
+      <Position>35</Position>
+    </column>
+    <column id="332" parent="292" name="selenium_100g">
+      <DasType>double|0s</DasType>
+      <Position>36</Position>
+    </column>
+    <column id="333" parent="292" name="fruits_vegetables_nuts_100g">
+      <DasType>double|0s</DasType>
+      <Position>37</Position>
+    </column>
+    <column id="334" parent="292" name="cocoa_100g">
+      <DasType>double|0s</DasType>
+      <Position>38</Position>
+    </column>
+    <index id="335" parent="292" name="ix_data_index">
+      <ColNames>index</ColNames>
+      <Type>btree</Type>
+    </index>
+    <column id="336" parent="293" name="index">
+      <DasType>bigint|0s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="337" parent="293" name="energy_100g">
+      <DasType>double|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="338" parent="293" name="fat_100g">
+      <DasType>double|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <column id="339" parent="293" name="saturated_fat_100g">
+      <DasType>double|0s</DasType>
+      <Position>4</Position>
+    </column>
+    <column id="340" parent="293" name="monounsaturated_fat_100g">
+      <DasType>double|0s</DasType>
+      <Position>5</Position>
+    </column>
+    <column id="341" parent="293" name="polyunsaturated_fat_100g">
+      <DasType>double|0s</DasType>
+      <Position>6</Position>
+    </column>
+    <column id="342" parent="293" name="trans_fat_100g">
+      <DasType>double|0s</DasType>
+      <Position>7</Position>
+    </column>
+    <column id="343" parent="293" name="cholesterol_100g">
+      <DasType>double|0s</DasType>
+      <Position>8</Position>
+    </column>
+    <column id="344" parent="293" name="carbohydrates_100g">
+      <DasType>double|0s</DasType>
+      <Position>9</Position>
+    </column>
+    <column id="345" parent="293" name="sugars_100g">
+      <DasType>double|0s</DasType>
+      <Position>10</Position>
+    </column>
+    <column id="346" parent="293" name="fiber_100g">
+      <DasType>double|0s</DasType>
+      <Position>11</Position>
+    </column>
+    <column id="347" parent="293" name="proteins_100g">
+      <DasType>double|0s</DasType>
+      <Position>12</Position>
+    </column>
+    <column id="348" parent="293" name="salt_100g">
+      <DasType>double|0s</DasType>
+      <Position>13</Position>
+    </column>
+    <column id="349" parent="293" name="sodium_100g">
+      <DasType>double|0s</DasType>
+      <Position>14</Position>
+    </column>
+    <column id="350" parent="293" name="alcohol_100g">
+      <DasType>double|0s</DasType>
+      <Position>15</Position>
+    </column>
+    <column id="351" parent="293" name="vitamin_a_100g">
+      <DasType>double|0s</DasType>
+      <Position>16</Position>
+    </column>
+    <column id="352" parent="293" name="vitamin_d_100g">
+      <DasType>double|0s</DasType>
+      <Position>17</Position>
+    </column>
+    <column id="353" parent="293" name="vitamin_e_100g">
+      <DasType>double|0s</DasType>
+      <Position>18</Position>
+    </column>
+    <column id="354" parent="293" name="vitamin_c_100g">
+      <DasType>double|0s</DasType>
+      <Position>19</Position>
+    </column>
+    <column id="355" parent="293" name="vitamin_b1_100g">
+      <DasType>double|0s</DasType>
+      <Position>20</Position>
+    </column>
+    <column id="356" parent="293" name="vitamin_b2_100g">
+      <DasType>double|0s</DasType>
+      <Position>21</Position>
+    </column>
+    <column id="357" parent="293" name="vitamin_pp_100g">
+      <DasType>double|0s</DasType>
+      <Position>22</Position>
+    </column>
+    <column id="358" parent="293" name="vitamin_b6_100g">
+      <DasType>double|0s</DasType>
+      <Position>23</Position>
+    </column>
+    <column id="359" parent="293" name="vitamin_b9_100g">
+      <DasType>double|0s</DasType>
+      <Position>24</Position>
+    </column>
+    <column id="360" parent="293" name="folates_100g">
+      <DasType>double|0s</DasType>
+      <Position>25</Position>
+    </column>
+    <column id="361" parent="293" name="vitamin_b12_100g">
+      <DasType>double|0s</DasType>
+      <Position>26</Position>
+    </column>
+    <column id="362" parent="293" name="pantothenic_acid_100g">
+      <DasType>double|0s</DasType>
+      <Position>27</Position>
+    </column>
+    <column id="363" parent="293" name="potassium_100g">
+      <DasType>double|0s</DasType>
+      <Position>28</Position>
+    </column>
+    <column id="364" parent="293" name="calcium_100g">
+      <DasType>double|0s</DasType>
+      <Position>29</Position>
+    </column>
+    <column id="365" parent="293" name="phosphorus_100g">
+      <DasType>double|0s</DasType>
+      <Position>30</Position>
+    </column>
+    <column id="366" parent="293" name="iron_100g">
+      <DasType>double|0s</DasType>
+      <Position>31</Position>
+    </column>
+    <column id="367" parent="293" name="magnesium_100g">
+      <DasType>double|0s</DasType>
+      <Position>32</Position>
+    </column>
+    <column id="368" parent="293" name="zinc_100g">
+      <DasType>double|0s</DasType>
+      <Position>33</Position>
+    </column>
+    <column id="369" parent="293" name="copper_100g">
+      <DasType>double|0s</DasType>
+      <Position>34</Position>
+    </column>
+    <column id="370" parent="293" name="manganese_100g">
+      <DasType>double|0s</DasType>
+      <Position>35</Position>
+    </column>
+    <column id="371" parent="293" name="selenium_100g">
+      <DasType>double|0s</DasType>
+      <Position>36</Position>
+    </column>
+    <column id="372" parent="293" name="fruits_vegetables_nuts_100g">
+      <DasType>double|0s</DasType>
+      <Position>37</Position>
+    </column>
+    <column id="373" parent="293" name="cocoa_100g">
+      <DasType>double|0s</DasType>
+      <Position>38</Position>
+    </column>
+    <column id="374" parent="293" name="features">
+      <DasType>text|0s</DasType>
+      <Position>39</Position>
+    </column>
+    <column id="375" parent="293" name="standardized">
+      <DasType>text|0s</DasType>
+      <Position>40</Position>
+    </column>
+    <column id="376" parent="293" name="prediction">
+      <DasType>int|0s</DasType>
+      <Position>41</Position>
+    </column>
+    <index id="377" parent="293" name="ix_data_classified_index">
+      <ColNames>index</ColNames>
+      <Type>btree</Type>
+    </index>
+    <column id="378" parent="294" name="index">
+      <DasType>bigint|0s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="379" parent="294" name="energy_100g">
+      <DasType>double|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="380" parent="294" name="fat_100g">
+      <DasType>double|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <column id="381" parent="294" name="saturated_fat_100g">
+      <DasType>double|0s</DasType>
+      <Position>4</Position>
+    </column>
+    <column id="382" parent="294" name="monounsaturated_fat_100g">
+      <DasType>double|0s</DasType>
+      <Position>5</Position>
+    </column>
+    <column id="383" parent="294" name="polyunsaturated_fat_100g">
+      <DasType>double|0s</DasType>
+      <Position>6</Position>
+    </column>
+    <column id="384" parent="294" name="trans_fat_100g">
+      <DasType>double|0s</DasType>
+      <Position>7</Position>
+    </column>
+    <column id="385" parent="294" name="cholesterol_100g">
+      <DasType>double|0s</DasType>
+      <Position>8</Position>
+    </column>
+    <column id="386" parent="294" name="carbohydrates_100g">
+      <DasType>double|0s</DasType>
+      <Position>9</Position>
+    </column>
+    <column id="387" parent="294" name="sugars_100g">
+      <DasType>double|0s</DasType>
+      <Position>10</Position>
+    </column>
+    <column id="388" parent="294" name="fiber_100g">
+      <DasType>double|0s</DasType>
+      <Position>11</Position>
+    </column>
+    <column id="389" parent="294" name="proteins_100g">
+      <DasType>double|0s</DasType>
+      <Position>12</Position>
+    </column>
+    <column id="390" parent="294" name="salt_100g">
+      <DasType>double|0s</DasType>
+      <Position>13</Position>
+    </column>
+    <column id="391" parent="294" name="sodium_100g">
+      <DasType>double|0s</DasType>
+      <Position>14</Position>
+    </column>
+    <column id="392" parent="294" name="alcohol_100g">
+      <DasType>double|0s</DasType>
+      <Position>15</Position>
+    </column>
+    <column id="393" parent="294" name="vitamin_a_100g">
+      <DasType>double|0s</DasType>
+      <Position>16</Position>
+    </column>
+    <column id="394" parent="294" name="vitamin_d_100g">
+      <DasType>double|0s</DasType>
+      <Position>17</Position>
+    </column>
+    <column id="395" parent="294" name="vitamin_e_100g">
+      <DasType>double|0s</DasType>
+      <Position>18</Position>
+    </column>
+    <column id="396" parent="294" name="vitamin_c_100g">
+      <DasType>double|0s</DasType>
+      <Position>19</Position>
+    </column>
+    <column id="397" parent="294" name="vitamin_b1_100g">
+      <DasType>double|0s</DasType>
+      <Position>20</Position>
+    </column>
+    <column id="398" parent="294" name="vitamin_b2_100g">
+      <DasType>double|0s</DasType>
+      <Position>21</Position>
+    </column>
+    <column id="399" parent="294" name="vitamin_pp_100g">
+      <DasType>double|0s</DasType>
+      <Position>22</Position>
+    </column>
+    <column id="400" parent="294" name="vitamin_b6_100g">
+      <DasType>double|0s</DasType>
+      <Position>23</Position>
+    </column>
+    <column id="401" parent="294" name="vitamin_b9_100g">
+      <DasType>double|0s</DasType>
+      <Position>24</Position>
+    </column>
+    <column id="402" parent="294" name="folates_100g">
+      <DasType>double|0s</DasType>
+      <Position>25</Position>
+    </column>
+    <column id="403" parent="294" name="vitamin_b12_100g">
+      <DasType>double|0s</DasType>
+      <Position>26</Position>
+    </column>
+    <column id="404" parent="294" name="pantothenic_acid_100g">
+      <DasType>double|0s</DasType>
+      <Position>27</Position>
+    </column>
+    <column id="405" parent="294" name="potassium_100g">
+      <DasType>double|0s</DasType>
+      <Position>28</Position>
+    </column>
+    <column id="406" parent="294" name="calcium_100g">
+      <DasType>double|0s</DasType>
+      <Position>29</Position>
+    </column>
+    <column id="407" parent="294" name="phosphorus_100g">
+      <DasType>double|0s</DasType>
+      <Position>30</Position>
+    </column>
+    <column id="408" parent="294" name="iron_100g">
+      <DasType>double|0s</DasType>
+      <Position>31</Position>
+    </column>
+    <column id="409" parent="294" name="magnesium_100g">
+      <DasType>double|0s</DasType>
+      <Position>32</Position>
+    </column>
+    <column id="410" parent="294" name="zinc_100g">
+      <DasType>double|0s</DasType>
+      <Position>33</Position>
+    </column>
+    <column id="411" parent="294" name="copper_100g">
+      <DasType>double|0s</DasType>
+      <Position>34</Position>
+    </column>
+    <column id="412" parent="294" name="manganese_100g">
+      <DasType>double|0s</DasType>
+      <Position>35</Position>
+    </column>
+    <column id="413" parent="294" name="selenium_100g">
+      <DasType>double|0s</DasType>
+      <Position>36</Position>
+    </column>
+    <column id="414" parent="294" name="fruits_vegetables_nuts_100g">
+      <DasType>double|0s</DasType>
+      <Position>37</Position>
+    </column>
+    <column id="415" parent="294" name="cocoa_100g">
+      <DasType>double|0s</DasType>
+      <Position>38</Position>
+    </column>
+    <column id="416" parent="294" name="prediction">
+      <DasType>bigint|0s</DasType>
+      <Position>39</Position>
+    </column>
+    <index id="417" parent="294" name="ix_data_test_set_index">
+      <ColNames>index</ColNames>
+      <Type>btree</Type>
+    </index>
+    <column id="418" parent="295" name="index">
+      <DasType>bigint|0s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="419" parent="295" name="energy_100g">
+      <DasType>double|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="420" parent="295" name="fat_100g">
+      <DasType>double|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <column id="421" parent="295" name="saturated_fat_100g">
+      <DasType>double|0s</DasType>
+      <Position>4</Position>
+    </column>
+    <column id="422" parent="295" name="monounsaturated_fat_100g">
+      <DasType>double|0s</DasType>
+      <Position>5</Position>
+    </column>
+    <column id="423" parent="295" name="polyunsaturated_fat_100g">
+      <DasType>double|0s</DasType>
+      <Position>6</Position>
+    </column>
+    <column id="424" parent="295" name="trans_fat_100g">
+      <DasType>double|0s</DasType>
+      <Position>7</Position>
+    </column>
+    <column id="425" parent="295" name="cholesterol_100g">
+      <DasType>double|0s</DasType>
+      <Position>8</Position>
+    </column>
+    <column id="426" parent="295" name="carbohydrates_100g">
+      <DasType>double|0s</DasType>
+      <Position>9</Position>
+    </column>
+    <column id="427" parent="295" name="sugars_100g">
+      <DasType>double|0s</DasType>
+      <Position>10</Position>
+    </column>
+    <column id="428" parent="295" name="fiber_100g">
+      <DasType>double|0s</DasType>
+      <Position>11</Position>
+    </column>
+    <column id="429" parent="295" name="proteins_100g">
+      <DasType>double|0s</DasType>
+      <Position>12</Position>
+    </column>
+    <column id="430" parent="295" name="salt_100g">
+      <DasType>double|0s</DasType>
+      <Position>13</Position>
+    </column>
+    <column id="431" parent="295" name="sodium_100g">
+      <DasType>double|0s</DasType>
+      <Position>14</Position>
+    </column>
+    <column id="432" parent="295" name="alcohol_100g">
+      <DasType>double|0s</DasType>
+      <Position>15</Position>
+    </column>
+    <column id="433" parent="295" name="vitamin_a_100g">
+      <DasType>double|0s</DasType>
+      <Position>16</Position>
+    </column>
+    <column id="434" parent="295" name="vitamin_d_100g">
+      <DasType>double|0s</DasType>
+      <Position>17</Position>
+    </column>
+    <column id="435" parent="295" name="vitamin_e_100g">
+      <DasType>double|0s</DasType>
+      <Position>18</Position>
+    </column>
+    <column id="436" parent="295" name="vitamin_c_100g">
+      <DasType>double|0s</DasType>
+      <Position>19</Position>
+    </column>
+    <column id="437" parent="295" name="vitamin_b1_100g">
+      <DasType>double|0s</DasType>
+      <Position>20</Position>
+    </column>
+    <column id="438" parent="295" name="vitamin_b2_100g">
+      <DasType>double|0s</DasType>
+      <Position>21</Position>
+    </column>
+    <column id="439" parent="295" name="vitamin_pp_100g">
+      <DasType>double|0s</DasType>
+      <Position>22</Position>
+    </column>
+    <column id="440" parent="295" name="vitamin_b6_100g">
+      <DasType>double|0s</DasType>
+      <Position>23</Position>
+    </column>
+    <column id="441" parent="295" name="vitamin_b9_100g">
+      <DasType>double|0s</DasType>
+      <Position>24</Position>
+    </column>
+    <column id="442" parent="295" name="folates_100g">
+      <DasType>double|0s</DasType>
+      <Position>25</Position>
+    </column>
+    <column id="443" parent="295" name="vitamin_b12_100g">
+      <DasType>double|0s</DasType>
+      <Position>26</Position>
+    </column>
+    <column id="444" parent="295" name="pantothenic_acid_100g">
+      <DasType>double|0s</DasType>
+      <Position>27</Position>
+    </column>
+    <column id="445" parent="295" name="potassium_100g">
+      <DasType>double|0s</DasType>
+      <Position>28</Position>
+    </column>
+    <column id="446" parent="295" name="calcium_100g">
+      <DasType>double|0s</DasType>
+      <Position>29</Position>
+    </column>
+    <column id="447" parent="295" name="phosphorus_100g">
+      <DasType>double|0s</DasType>
+      <Position>30</Position>
+    </column>
+    <column id="448" parent="295" name="iron_100g">
+      <DasType>double|0s</DasType>
+      <Position>31</Position>
+    </column>
+    <column id="449" parent="295" name="magnesium_100g">
+      <DasType>double|0s</DasType>
+      <Position>32</Position>
+    </column>
+    <column id="450" parent="295" name="zinc_100g">
+      <DasType>double|0s</DasType>
+      <Position>33</Position>
+    </column>
+    <column id="451" parent="295" name="copper_100g">
+      <DasType>double|0s</DasType>
+      <Position>34</Position>
+    </column>
+    <column id="452" parent="295" name="manganese_100g">
+      <DasType>double|0s</DasType>
+      <Position>35</Position>
+    </column>
+    <column id="453" parent="295" name="selenium_100g">
+      <DasType>double|0s</DasType>
+      <Position>36</Position>
+    </column>
+    <column id="454" parent="295" name="fruits_vegetables_nuts_100g">
+      <DasType>double|0s</DasType>
+      <Position>37</Position>
+    </column>
+    <column id="455" parent="295" name="cocoa_100g">
+      <DasType>double|0s</DasType>
+      <Position>38</Position>
+    </column>
+    <column id="456" parent="295" name="label">
+      <DasType>bigint|0s</DasType>
+      <Position>39</Position>
+    </column>
+    <column id="457" parent="295" name="features">
+      <DasType>text|0s</DasType>
+      <Position>40</Position>
+    </column>
+    <column id="458" parent="295" name="standardized">
+      <DasType>text|0s</DasType>
+      <Position>41</Position>
+    </column>
+    <column id="459" parent="295" name="rawPrediction">
+      <DasType>text|0s</DasType>
+      <Position>42</Position>
+    </column>
+    <column id="460" parent="295" name="probability">
+      <DasType>text|0s</DasType>
+      <Position>43</Position>
+    </column>
+    <column id="461" parent="295" name="prediction">
+      <DasType>double|0s</DasType>
+      <Position>44</Position>
+    </column>
+    <index id="462" parent="295" name="ix_data_test_set_classified_by_NB_index">
+      <ColNames>index</ColNames>
+      <Type>btree</Type>
+    </index>
+    <column id="463" parent="296" name="index">
+      <DasType>bigint|0s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="464" parent="296" name="energy_100g">
+      <DasType>double|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="465" parent="296" name="fat_100g">
+      <DasType>double|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <column id="466" parent="296" name="saturated_fat_100g">
+      <DasType>double|0s</DasType>
+      <Position>4</Position>
+    </column>
+    <column id="467" parent="296" name="monounsaturated_fat_100g">
+      <DasType>double|0s</DasType>
+      <Position>5</Position>
+    </column>
+    <column id="468" parent="296" name="polyunsaturated_fat_100g">
+      <DasType>double|0s</DasType>
+      <Position>6</Position>
+    </column>
+    <column id="469" parent="296" name="trans_fat_100g">
+      <DasType>double|0s</DasType>
+      <Position>7</Position>
+    </column>
+    <column id="470" parent="296" name="cholesterol_100g">
+      <DasType>double|0s</DasType>
+      <Position>8</Position>
+    </column>
+    <column id="471" parent="296" name="carbohydrates_100g">
+      <DasType>double|0s</DasType>
+      <Position>9</Position>
+    </column>
+    <column id="472" parent="296" name="sugars_100g">
+      <DasType>double|0s</DasType>
+      <Position>10</Position>
+    </column>
+    <column id="473" parent="296" name="fiber_100g">
+      <DasType>double|0s</DasType>
+      <Position>11</Position>
+    </column>
+    <column id="474" parent="296" name="proteins_100g">
+      <DasType>double|0s</DasType>
+      <Position>12</Position>
+    </column>
+    <column id="475" parent="296" name="salt_100g">
+      <DasType>double|0s</DasType>
+      <Position>13</Position>
+    </column>
+    <column id="476" parent="296" name="sodium_100g">
+      <DasType>double|0s</DasType>
+      <Position>14</Position>
+    </column>
+    <column id="477" parent="296" name="alcohol_100g">
+      <DasType>double|0s</DasType>
+      <Position>15</Position>
+    </column>
+    <column id="478" parent="296" name="vitamin_a_100g">
+      <DasType>double|0s</DasType>
+      <Position>16</Position>
+    </column>
+    <column id="479" parent="296" name="vitamin_d_100g">
+      <DasType>double|0s</DasType>
+      <Position>17</Position>
+    </column>
+    <column id="480" parent="296" name="vitamin_e_100g">
+      <DasType>double|0s</DasType>
+      <Position>18</Position>
+    </column>
+    <column id="481" parent="296" name="vitamin_c_100g">
+      <DasType>double|0s</DasType>
+      <Position>19</Position>
+    </column>
+    <column id="482" parent="296" name="vitamin_b1_100g">
+      <DasType>double|0s</DasType>
+      <Position>20</Position>
+    </column>
+    <column id="483" parent="296" name="vitamin_b2_100g">
+      <DasType>double|0s</DasType>
+      <Position>21</Position>
+    </column>
+    <column id="484" parent="296" name="vitamin_pp_100g">
+      <DasType>double|0s</DasType>
+      <Position>22</Position>
+    </column>
+    <column id="485" parent="296" name="vitamin_b6_100g">
+      <DasType>double|0s</DasType>
+      <Position>23</Position>
+    </column>
+    <column id="486" parent="296" name="vitamin_b9_100g">
+      <DasType>double|0s</DasType>
+      <Position>24</Position>
+    </column>
+    <column id="487" parent="296" name="folates_100g">
+      <DasType>double|0s</DasType>
+      <Position>25</Position>
+    </column>
+    <column id="488" parent="296" name="vitamin_b12_100g">
+      <DasType>double|0s</DasType>
+      <Position>26</Position>
+    </column>
+    <column id="489" parent="296" name="pantothenic_acid_100g">
+      <DasType>double|0s</DasType>
+      <Position>27</Position>
+    </column>
+    <column id="490" parent="296" name="potassium_100g">
+      <DasType>double|0s</DasType>
+      <Position>28</Position>
+    </column>
+    <column id="491" parent="296" name="calcium_100g">
+      <DasType>double|0s</DasType>
+      <Position>29</Position>
+    </column>
+    <column id="492" parent="296" name="phosphorus_100g">
+      <DasType>double|0s</DasType>
+      <Position>30</Position>
+    </column>
+    <column id="493" parent="296" name="iron_100g">
+      <DasType>double|0s</DasType>
+      <Position>31</Position>
+    </column>
+    <column id="494" parent="296" name="magnesium_100g">
+      <DasType>double|0s</DasType>
+      <Position>32</Position>
+    </column>
+    <column id="495" parent="296" name="zinc_100g">
+      <DasType>double|0s</DasType>
+      <Position>33</Position>
+    </column>
+    <column id="496" parent="296" name="copper_100g">
+      <DasType>double|0s</DasType>
+      <Position>34</Position>
+    </column>
+    <column id="497" parent="296" name="manganese_100g">
+      <DasType>double|0s</DasType>
+      <Position>35</Position>
+    </column>
+    <column id="498" parent="296" name="selenium_100g">
+      <DasType>double|0s</DasType>
+      <Position>36</Position>
+    </column>
+    <column id="499" parent="296" name="fruits_vegetables_nuts_100g">
+      <DasType>double|0s</DasType>
+      <Position>37</Position>
+    </column>
+    <column id="500" parent="296" name="cocoa_100g">
+      <DasType>double|0s</DasType>
+      <Position>38</Position>
+    </column>
+    <column id="501" parent="296" name="prediction">
+      <DasType>bigint|0s</DasType>
+      <Position>39</Position>
+    </column>
+    <index id="502" parent="296" name="ix_data_train_set_index">
+      <ColNames>index</ColNames>
+      <Type>btree</Type>
+    </index>
   </database-model>
 </dataSource>

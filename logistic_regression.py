@@ -2,10 +2,9 @@ import pandas as pd
 from pyspark.conf import SparkConf
 from pyspark.sql.functions import *
 from pyspark.sql import SparkSession
-from pyspark.ml.classification import NaiveBayes
+from pyspark.ml.classification import LogisticRegression
 from pyspark.ml.feature import VectorAssembler
 from pyspark.ml.feature import StandardScaler
-from pyspark.ml.evaluation import MulticlassClassificationEvaluator
 
 from data_mart import DataMart
 
@@ -14,7 +13,7 @@ from logger import Logger
 SHOW_LOG = True
 
 
-class NaiveBayesModel:
+class LogisticRegressionModel:
     def __init__(self):
         logger = Logger(SHOW_LOG)
         self.log = logger.get_logger(__name__)
@@ -27,13 +26,11 @@ class NaiveBayesModel:
             .getOrCreate()
 
     def train(self):
-        df_train = self.datamart.get_train_data()
-        df_test = self.datamart.get_test_data()
+        df_train = self.datamart.get_data_test_classified_by_nb()
 
         sparkDFTrain = self.spark.createDataFrame(df_train)
+        sparkDFTrain = sparkDFTrain.drop("label")
         sparkDFTrain = sparkDFTrain.withColumnRenamed("prediction", "label")
-        sparkDFTest = self.spark.createDataFrame(df_test)
-        sparkDFTest = sparkDFTest.withColumnRenamed("prediction", "label")
         self.log.info("Data loaded!")
 
         cols = sparkDFTrain.columns.copy()
@@ -41,34 +38,18 @@ class NaiveBayesModel:
         assemble = VectorAssembler(inputCols=cols, outputCol='features')
         sparkDFTrain = assemble.transform(sparkDFTrain)
 
-        scale = StandardScaler(inputCol='features', outputCol='standardized')
+        scale = StandardScaler(inputCol='features', outputCol='standardized', )
         data_scale = scale.fit(sparkDFTrain)
         sparkDFTrain = data_scale.transform(sparkDFTrain)
 
-        cols = sparkDFTest.columns.copy()
-        cols.remove("label")
-        assemble = VectorAssembler(inputCols=cols, outputCol='features')
-        sparkDFTest = assemble.transform(sparkDFTest)
+        lr = LogisticRegression()
+        lr = lr.fit(sparkDFTrain)
 
-        scale = StandardScaler(inputCol='features', outputCol='standardized', )
-        data_scale = scale.fit(sparkDFTest)
-        sparkDFTest = data_scale.transform(sparkDFTest)
-
-        nb = NaiveBayes(smoothing=1.0, modelType="multinomial")
-        nb = nb.fit(sparkDFTrain)
-        pred = nb.transform(sparkDFTest)
-        pred.show(10)
-
-        evaluator = MulticlassClassificationEvaluator(predictionCol="prediction")
-        acc = evaluator.evaluate(pred)
-
-        print("Prediction Accuracy: ", acc)
-
-        self.save_model(pred.toPandas())
+        print(lr.getWeightCol())
 
     def save_model(self, df: pd.DataFrame):
-        """Saves clustered data"""
-        self.datamart.save_classified_data(df)
+        """Saves weights data"""
+        pass
 
 
 if __name__ == "__main__":
@@ -78,7 +59,7 @@ if __name__ == "__main__":
 
     sc = SparkContext(conf=conf).getOrCreate()
 
-    nbm = NaiveBayesModel()
+    nbm = LogisticRegressionModel()
     nbm.train()
 
     sc.stop()
