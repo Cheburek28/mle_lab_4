@@ -61,17 +61,27 @@ class LogisticRegressionModel:
             .rdd.map(lambda row: (float(row['probability'][1]), float(row['label']))) \
             .collect()
 
-        # summary = lr.summary
+        summary = lr.summary
+
+        summary.roc.show()
+        print("areaUnderROC: " + str(summary.areaUnderROC))  # areaUnderROC: 1.0
+
+        print(f'FP: {summary.falsePositiveRateByLabel}')  # FP: [0.0, 0.0]
+        print(f'TP: {summary.truePositiveRateByLabel}')  # TP: [1.0, 1.0]
+
+        fMeasure = summary.fMeasureByThreshold
+        maxFMeasure = fMeasure.groupBy().max('F-Measure').select('max(F-Measure)').head()
+        bestThreshold = fMeasure.where(fMeasure['F-Measure'] == maxFMeasure['max(F-Measure)']) \
+            .select('threshold').head()['threshold']
+
+        print(f"bestThreshold: {bestThreshold}")  # bestThreshold: 0.9995774624295405
+
+        # from sklearn.metrics import roc_curve
         #
-        # print(f'FP: {summary.falsePositiveRateByLabel}')
-        # print(f'TP: {summary.truePositiveRateByLabel}')
-
-        from sklearn.metrics import roc_curve
-
-        y_score, y_true = zip(*preds)
-        fpr, tpr, thresholds = roc_curve(y_true, y_score, pos_label=1)
-
-        print(f"FPR: {fpr}, TPR: {tpr}, Thresholds{thresholds}")
+        # y_score, y_true = zip(*preds)
+        # fpr, tpr, thresholds = roc_curve(y_true, y_score, pos_label=1)
+        #
+        # print(f"FPR: {fpr}, TPR: {tpr}, Thresholds{thresholds}")
 
         # FPR: [0.         0.08658718 0.08725782 1.        ],
         # TPR: [0.         0.99924012 0.99924012 1.        ],
