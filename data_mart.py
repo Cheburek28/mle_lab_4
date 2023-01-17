@@ -11,7 +11,7 @@ SHOW_LOG = True
 
 class DataMart:
 
-    NUM_CLASTERS = 7
+    NUM_CLASTERS = 2
 
     def __init__(self):
         """Reads data from data source, proceeds it and makes test, train split"""
@@ -60,10 +60,10 @@ class DataMart:
 
         return df
 
-    def save_classified_data(self, data: pd.DataFrame):
+    def save_classified_data(self, data: pd.DataFrame, method: str):
         conn = self.sqlEngine.connect()
         try:
-            data.to_sql("data_test_set_classified_by_NB", conn, if_exists="replace")
+            data.to_sql(f"data_test_set_classified_by_{method}", conn, if_exists="replace")
             self.df_train.to_sql("data_train_set", conn, if_exists="replace")
             self.df_test.to_sql("data_test_set", conn, if_exists="replace")
         except ValueError as e:

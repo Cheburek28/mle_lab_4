@@ -54,7 +54,7 @@ class NaiveBayesModel:
         data_scale = scale.fit(sparkDFTest)
         sparkDFTest = data_scale.transform(sparkDFTest)
 
-        nb = NaiveBayes(smoothing=1.0, modelType="multinomial")
+        nb = NaiveBayes(featuresCol='standardized', smoothing=1.0)
         nb = nb.fit(sparkDFTrain)
         pred = nb.transform(sparkDFTest)
         pred.show(10)
@@ -62,13 +62,13 @@ class NaiveBayesModel:
         evaluator = MulticlassClassificationEvaluator(predictionCol="prediction")
         acc = evaluator.evaluate(pred)
 
-        print("Prediction Accuracy: ", acc)
+        print("Prediction Accuracy: ", acc)  # Prediction Accuracy:  0.8908897080979397
 
         self.save_model(pred.toPandas())
 
     def save_model(self, df: pd.DataFrame):
         """Saves clustered data"""
-        self.datamart.save_classified_data(df)
+        self.datamart.save_classified_data(df, "NB")
 
 
 if __name__ == "__main__":

@@ -26,11 +26,13 @@ class LogisticRegressionModel:
             .getOrCreate()
 
     def train(self):
-        df_train = self.datamart.get_data_test_classified_by_nb()
+        df_train = self.datamart.get_train_data()
+        df_test = self.datamart.get_test_data()
 
         sparkDFTrain = self.spark.createDataFrame(df_train)
-        sparkDFTrain = sparkDFTrain.drop("label")
         sparkDFTrain = sparkDFTrain.withColumnRenamed("prediction", "label")
+        sparkDFTest = self.spark.createDataFrame(df_test)
+        sparkDFTest = sparkDFTest.withColumnRenamed("prediction", "label")
         self.log.info("Data loaded!")
 
         cols = sparkDFTrain.columns.copy()
@@ -38,18 +40,48 @@ class LogisticRegressionModel:
         assemble = VectorAssembler(inputCols=cols, outputCol='features')
         sparkDFTrain = assemble.transform(sparkDFTrain)
 
-        scale = StandardScaler(inputCol='features', outputCol='standardized', )
+        scale = StandardScaler(inputCol='features', outputCol='standardized')
         data_scale = scale.fit(sparkDFTrain)
         sparkDFTrain = data_scale.transform(sparkDFTrain)
 
-        lr = LogisticRegression()
-        lr = lr.fit(sparkDFTrain)
+        cols = sparkDFTest.columns.copy()
+        cols.remove("label")
+        assemble = VectorAssembler(inputCols=cols, outputCol='features')
+        sparkDFTest = assemble.transform(sparkDFTest)
 
-        print(lr.getWeightCol())
+        scale = StandardScaler(inputCol='features', outputCol='standardized', )
+        data_scale = scale.fit(sparkDFTest)
+        sparkDFTest = data_scale.transform(sparkDFTest)
+
+        lr = LogisticRegression(featuresCol="standardized").fit(sparkDFTrain)
+
+        lr_pred = lr.transform(sparkDFTest)
+
+        preds = lr_pred.select('label', 'probability') \
+            .rdd.map(lambda row: (float(row['probability'][1]), float(row['label']))) \
+            .collect()
+
+        # summary = lr.summary
+        #
+        # print(f'FP: {summary.falsePositiveRateByLabel}')
+        # print(f'TP: {summary.truePositiveRateByLabel}')
+
+        from sklearn.metrics import roc_curve
+
+        y_score, y_true = zip(*preds)
+        fpr, tpr, thresholds = roc_curve(y_true, y_score, pos_label=1)
+
+        print(f"FPR: {fpr}, TPR: {tpr}, Thresholds{thresholds}")
+
+        # FPR: [0.         0.08658718 0.08725782 1.        ],
+        # TPR: [0.         0.99924012 0.99924012 1.        ],
+        # Thresholds[2.00000000e+00 1.00000000e+00 2.22044605e-16 0.00000000e+00]
+
+        self.save_model(lr_pred.toPandas())
 
     def save_model(self, df: pd.DataFrame):
-        """Saves weights data"""
-        pass
+        """Saves clustered data"""
+        self.datamart.save_classified_data(df, "LR")
 
 
 if __name__ == "__main__":
