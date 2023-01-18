@@ -5,6 +5,7 @@ from sklearn.model_selection import train_test_split
 from logger import Logger
 import sys
 import traceback
+import configparser
 
 SHOW_LOG = True
 
@@ -17,8 +18,16 @@ class DataMart:
         """Reads data from data source, proceeds it and makes test, train split"""
         logger = Logger(SHOW_LOG)
         self.log = logger.get_logger(__name__)
+        self.config = configparser.ConfigParser()
+        self.config.read("config.ini")
 
-        self.sqlEngine = create_engine('mysql+pymysql://artem:artem@127.0.0.1:6603/MLE_LAB_3', pool_recycle=3600)
+        host = self.config["DATABASE_AUTHORIZATION"]["host"]
+        port = self.config["DATABASE_AUTHORIZATION"]["port"]
+        database = self.config["DATABASE_AUTHORIZATION"]["database"]
+        password = self.config["DATABASE_AUTHORIZATION"]["password"]
+        login = self.config["DATABASE_AUTHORIZATION"]["login"]
+
+        self.sqlEngine = create_engine(f'mysql+pymysql://{login}:{password}@{host}:{port}/{database}', pool_recycle=3600)
 
         conn = self.sqlEngine.connect()
         df = pd.read_sql("SELECT * FROM data_classified;", conn)
@@ -78,6 +87,14 @@ class DataMart:
             conn.close()
 
         conn.close()
+
+    def get_probability_for_cluster_centers(self):
+        conn = self.sqlEngine.connect()
+        df = pd.read_sql("SELECT * FROM data_test_set_classified_by_NB;", conn)
+        df.drop(["index", "features", "standardized", "rawPrediction", "probability"], axis=1, inplace=True)
+        conn.close()
+
+        return df
 
 
 if __name__ == "__main__":

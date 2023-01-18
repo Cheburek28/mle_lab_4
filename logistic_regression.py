@@ -76,17 +76,6 @@ class LogisticRegressionModel:
 
         print(f"bestThreshold: {bestThreshold}")  # bestThreshold: 0.9995774624295405
 
-        # from sklearn.metrics import roc_curve
-        #
-        # y_score, y_true = zip(*preds)
-        # fpr, tpr, thresholds = roc_curve(y_true, y_score, pos_label=1)
-        #
-        # print(f"FPR: {fpr}, TPR: {tpr}, Thresholds{thresholds}")
-
-        # FPR: [0.         0.08658718 0.08725782 1.        ],
-        # TPR: [0.         0.99924012 0.99924012 1.        ],
-        # Thresholds[2.00000000e+00 1.00000000e+00 2.22044605e-16 0.00000000e+00]
-
         self.save_model(lr_pred.toPandas())
 
     def save_model(self, df: pd.DataFrame):
